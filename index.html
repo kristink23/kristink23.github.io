@@ -10,6 +10,16 @@
         margin: 2rem 0;
     }
 
+    .original-card {
+        background: #e8f4f8;
+        border: 1px solid #bee5eb;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
     .enhancement-card {
         background: #f8f9fa;
         border: 1px solid #dee2e6;
@@ -24,12 +34,12 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
-    .enhancement-card h3 {
+    .enhancement-card h3, .original-card h3 {
         color: #2c3e50;
         margin-bottom: 0.5rem;
     }
 
-    .enhancement-card p {
+    .enhancement-card p, .original-card p {
         color: #6c757d;
         margin-bottom: 1rem;
         line-height: 1.5;
@@ -39,6 +49,7 @@
         display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .btn {
@@ -66,6 +77,15 @@
     .btn.secondary:hover {
         background-color: #5a6268;
     }
+
+    .btn.original {
+        background-color: #17a2b8;
+        color: white;
+    }
+
+    .btn.original:hover {
+        background-color: #138496;
+    }
     </style>
 </head>
 <body>
@@ -78,6 +98,17 @@
             allowfullscreen>
     </iframe>
     
+    <section id="original-artifact">
+        <h2>Original Artifact</h2>
+        <div class="original-card">
+            <h3>Weight Tracking Android App</h3>
+            <p>The foundation for all three enhancements - a basic Android weight tracking application</p>
+            <div class="card-buttons">
+                <a href="artifacts/Originals/KinealyOriginalWeightTrackingApp.zip" class="btn original">Download Original Code</a>
+            </div>
+        </div>
+    </section>
+    
     <section id="portfolio-enhancements">
         <h2>Portfolio Enhancements</h2>
         
@@ -87,8 +118,7 @@
                 <p>Weight Tracker Android App with MVVM architecture, user authentication, and AWS integration</p>
                 <div class="card-buttons">
                     <a href="narratives/SoftwareDesignAndEngineering.html" class="btn primary">Read Narrative</a>
-                    <a href="artifacts/Originals/KinealyOriginalWeightTrackingApp.zip" class="btn secondary">Original Code</a>
-                    <a href="artifacts/Enhancements/" class="btn secondary">Enhanced Code</a>
+                    <a href="artifacts/Enhancements/KinealyEnhancementOneWeightTrackingApp20250720.zip" class="btn secondary">View Code</a>
                 </div>
             </div>
             
