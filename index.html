@@ -3,6 +3,38 @@
 <head>
     <title>Kristin Kinealy's CS499 Capstone Project</title>
     <style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h1 {
+        color: #bb86fc;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        color: #03dac6;
+        margin: 2rem 0 1rem 0;
+        font-size: 1.8rem;
+    }
+
+    iframe {
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+
     .enhancements-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -10,37 +42,53 @@
         margin: 2rem 0;
     }
 
-    .original-card {
-        background: #e8f4f8;
-        border: 1px solid #bee5eb;
+    .self-assessment-card {
+        background: #1e3a1e;
+        border: 1px solid #4caf50;
         border-radius: 8px;
         padding: 1.5rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         margin-bottom: 2rem;
-        text-align: center;
+    }
+
+    .self-assessment-card p {
+        color: #81c784;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+        font-style: italic;
+    }
+
+    .original-card {
+        background: #1a2332;
+        border: 1px solid #03dac6;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        margin-bottom: 2rem;
     }
 
     .enhancement-card {
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
+        background: #1e1e1e;
+        border: 1px solid #333333;
         border-radius: 8px;
         padding: 1.5rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        transition: transform 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .enhancement-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        border-color: #bb86fc;
     }
 
-    .enhancement-card h3, .original-card h3 {
-        color: #2c3e50;
+    .enhancement-card h3, .original-card h3, .self-assessment-card h3 {
+        color: #bb86fc;
         margin-bottom: 0.5rem;
     }
 
     .enhancement-card p, .original-card p {
-        color: #6c757d;
+        color: #b0b0b0;
         margin-bottom: 1rem;
         line-height: 1.5;
     }
@@ -53,120 +101,113 @@
     }
 
     .btn {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1.5rem;
         text-decoration: none;
-        border-radius: 4px;
+        border-radius: 6px;
         font-weight: 500;
-        transition: background-color 0.2s ease;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
     }
 
     .btn.primary {
-        background-color: #007bff;
+        background: linear-gradient(45deg, #bb86fc, #9c27b0);
         color: white;
     }
 
     .btn.primary:hover {
-        background-color: #0056b3;
+        background: linear-gradient(45deg, #9c27b0, #7b1fa2);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(187, 134, 252, 0.3);
     }
 
     .btn.secondary {
-        background-color: #6c757d;
-        color: white;
+        background: linear-gradient(45deg, #03dac6, #00bcd4);
+        color: #121212;
     }
 
     .btn.secondary:hover {
-        background-color: #5a6268;
+        background: linear-gradient(45deg, #00bcd4, #0097a7);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(3, 218, 198, 0.3);
     }
 
     .btn.original {
-        background-color: #17a2b8;
+        background: linear-gradient(45deg, #ff6b35, #f7931e);
         color: white;
     }
 
     .btn.original:hover {
-        background-color: #138496;
+        background: linear-gradient(45deg, #f7931e, #ff8f00);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
     }
-.self-assessment-card {
-    background: #f0f8f0;
-    border: 1px solid #c3e6c3;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.self-assessment-card p {
-    color: #2d5a2d;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-    font-style: italic;
-}        
     </style>
 </head>
 <body>
-    <h1>Kristin Kinealy's CS499 Capstone Project</h1>
-    
-    <h2>My Code Review Video</h2>
-    <iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/UlXG0CW1vFY" 
-            frameborder="0" 
-            allowfullscreen>
-    </iframe>
-
-    <section id="professional-self-assessment">
-        <h2>Professional Self-Assessment</h2>
-        <div class="self-assessment-card">
-            <p>A comprehensive reflection on my Computer Science journey, showcasing how my coursework and capstone project have prepared me for a career in public safety technology.</p>
-            <div class="card-buttons">
-                <a href="narratives/ProfessionalSelfAssessment.html" class="btn primary">Read Self-Assessment</a>
-            </div>
-        </div>
-    </section>
-    
-    <section id="original-artifact">
-        <h2>Original Artifact</h2>
-        <div class="original-card">
-            <h3>Weight Tracking Android App</h3>
-            <p>The foundation for all three enhancements - a basic Android weight tracking application</p>
-            <div class="card-buttons">
-                <a href="artifacts/Originals/KinealyOriginalWeightTrackingApp.zip" class="btn original">Download Original Code</a>
-            </div>
-        </div>
-    </section>
-    
-    <section id="portfolio-enhancements">
-        <h2>Portfolio Enhancements</h2>
+    <div class="container">
+        <h1>Kristin Kinealy's CS499 Capstone Project</h1>
         
-        <div class="enhancements-grid">
-            <div class="enhancement-card">
-                <h3>Software Design & Engineering</h3>
-                <p>Weight Tracker Android App with MVVM architecture, user authentication, and AWS integration</p>
+        <h2>My Code Review Video</h2>
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/UlXG0CW1vFY" 
+                frameborder="0" 
+                allowfullscreen>
+        </iframe>
+        
+        <section id="professional-self-assessment">
+            <h2>Professional Self-Assessment</h2>
+            <div class="self-assessment-card">
+                <p>A comprehensive reflection on my Computer Science journey, showcasing how my coursework and capstone project have prepared me for a career in public safety technology.</p>
                 <div class="card-buttons">
-                    <a href="narratives/SoftwareDesignAndEngineering.html" class="btn primary">Read Narrative</a>
-                    <a href="artifacts/Enhancements/KinealyEnhancementOneWeightTrackingApp20250720.zip" class="btn secondary">View Code</a>
+                    <a href="narratives/ProfessionalSelfAssessment.html" class="btn primary">Read Self-Assessment</a>
                 </div>
             </div>
+        </section>
+        
+        <section id="original-artifact">
+            <h2>Original Artifact</h2>
+            <div class="original-card">
+                <h3>Weight Tracking Android App</h3>
+                <p>The foundation for all three enhancements. A basic Android weight tracking application</p>
+                <div class="card-buttons">
+                    <a href="artifacts/Originals/KinealyOriginalWeightTrackingApp.zip" class="btn original">Download Original Code</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="portfolio-enhancements">
+            <h2>Portfolio Enhancements</h2>
             
-            <div class="enhancement-card">
-                <h3>Algorithms & Data Structures</h3>
-                <p>Linear regression algorithm for weight trend analysis and efficient data filtering</p>
-                <div class="card-buttons">
-                    <a href="narratives/AlgorithmsAndDataStructure.html" class="btn primary">Read Narrative</a>
-                    <a href="artifacts/Enhancements/KinealyEnhancementTwoWeightTrackingApp20250727.zip" class="btn secondary">View Code</a>
+            <div class="enhancements-grid">
+                <div class="enhancement-card">
+                    <h3>Software Design & Engineering</h3>
+                    <p>Weight Tracker Android App with MVVM architecture, user authentication, and AWS integration</p>
+                    <div class="card-buttons">
+                        <a href="narratives/SoftwareDesignAndEngineering.html" class="btn primary">Read Narrative</a>
+                        <a href="artifacts/Enhancements/KinealyEnhancementOneWeightTrackingApp20250720.zip" class="btn secondary">View Code</a>
+                    </div>
+                </div>
+                
+                <div class="enhancement-card">
+                    <h3>Algorithms & Data Structures</h3>
+                    <p>Linear regression algorithm for weight trend analysis and efficient data filtering</p>
+                    <div class="card-buttons">
+                        <a href="narratives/AlgorithmsAndDataStructure.html" class="btn primary">Read Narrative</a>
+                        <a href="artifacts/Enhancements/KinealyEnhancementTwoWeightTrackingApp20250727.zip" class="btn secondary">View Code</a>
+                    </div>
+                </div>
+                
+                <div class="enhancement-card">
+                    <h3>Databases</h3>
+                    <p>AWS Amplify cloud backend with user authentication and data separation. This is a finalized app.</p>
+                    <div class="card-buttons">
+                        <a href="narratives/Databases.html" class="btn primary">Read Narrative</a>
+                        <a href="artifacts/Enhancements/KinealyEnhancementThreeWeightTrackingApp20250807.zip" class="btn secondary">View Code</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="enhancement-card">
-                <h3>Databases</h3>
-                <p>AWS Amplify cloud backend with user authentication and data separation</p>
-                <div class="card-buttons">
-                    <a href="narratives/Databases.html" class="btn primary">Read Narrative</a>
-                    <a href="artifacts/Enhancements/KinealyEnhancementThreeWeightTrackingApp20250807.zip" class="btn secondary">View Code</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+        </section>
+    </div>
 </body>
 </html>
